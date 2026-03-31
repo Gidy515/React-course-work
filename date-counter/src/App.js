@@ -5,6 +5,9 @@ function App() {
   const [stepNum, setStepNum] = useState(1);
   const [countNum, setCountNum] = useState(0);
 
+  const date = new Date("june 21 2017");
+  date.setDate(date.getDate() + countNum);
+
   function handlePrevSteps() {
     if (stepNum >= 1) {
       setStepNum((stepNum) => stepNum - 1);
