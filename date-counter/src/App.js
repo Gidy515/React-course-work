@@ -6,7 +6,7 @@ function App() {
   const [countNum, setCountNum] = useState(0);
 
   const date = new Date("june 21 2017");
-  date.setDate(date.getDate() + countNum);
+  date.setDate(date.getDate() + countNum); // output of this line is:
 
   function handlePrevSteps() {
     if (stepNum >= 1) {
@@ -40,7 +40,6 @@ function App() {
         <h3>Step {stepNum}</h3>
         <button onClick={handleNextSteps}>+</button>
       </div>
-
       <div className="counts">
         <button onClick={handleSubtractCount}>-</button>
         <h3>Count {countNum}</h3>

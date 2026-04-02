@@ -47,7 +47,7 @@ function FlashCards() {
   const [selectedId, setSelectedId] = useState(null);
 
   function handleClick(id) {
-    setSelectedId(id);
+    setSelectedId(id !== selectedId ? id : null); // this line says if the id is not equal to the selected id, then set the selected id to the id, otherwise set the selected id to null. This is a toggle functionality that allows us to show the answer when we click on the question and hide the answer when we click on the question again
   }
 
   return (
@@ -60,6 +60,7 @@ function FlashCards() {
         >
           <p>
             {question.id === selectedId ? question.answer : question.question}
+            {/* This line is saying that if the question id is not null, then show the answer of the question whose id is selected, otherwise show the question of the question whose id is selected. This is a toggle functionality that allows us to show the answer when we click on the question and hide the answer when we click on the question again */}
           </p>
         </div>
       ))}
